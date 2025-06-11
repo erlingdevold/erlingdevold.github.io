@@ -5,12 +5,13 @@ on:
     branches:
       - main
   pull_request:
-  registry_package:
+
 permissions:
   contents: write
+
 jobs:
-  cv-runner:
-    name: cv runner
+  build-pdf:
+    name: Build CV PDF
     runs-on: ubuntu-latest
     container:
       image: thomasweise/docker-texlive-full:latest
@@ -26,27 +27,36 @@ jobs:
           mkdir -p ../static
           cp cv.pdf ../static/
 
-      - name: Upload PDF
+      - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: cv.pdf
+          name: cv-pdf
           path: static/cv.pdf
 
-      - name: Upload log (if exists)
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: template.log
-          path: cv/template.log
+  commit-pdf:
+    name: Commit PDF to repo
+    needs: build-pdf
+    runs-on: ubuntu-latest
 
-      - name: Commit cv.pdf 
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v4
-      - name: Commit cv.pdf to static/ and push 
+        with:
+          persist-credentials: true
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: cv-pdf
+          path: static/
+
+      - name: Commit and push PDF
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add static/cv.pdf
           git commit -m "Update cv.pdf [auto]" || echo "No changes to commit"
+          git pull --rebase
           git push
         env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
