@@ -1,4 +1,4 @@
-name: Build template
+name: cv runner
 
 on:
   push:
