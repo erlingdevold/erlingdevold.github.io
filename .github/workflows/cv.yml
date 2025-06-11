@@ -1,0 +1,32 @@
+name: Build CV PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cv/**.tex'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Install LaTeX (minimal TeX Live)
+      run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra
+
+    - name: Compile CV
+      working-directory: ./cv
+      run: |
+        pdflatex -interaction=nonstopmode cv.tex
+        cp cv.pdf ../static/cv.pdf
+
+    - name: Commit built CV
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "actions@github.com"
+        git add static/cv.pdf
+        git commit -m "Auto-update cv.pdf" || echo "No changes to commit"
+        git push
