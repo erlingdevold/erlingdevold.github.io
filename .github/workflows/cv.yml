@@ -1,32 +1,35 @@
-name: Build CV PDF
+name: Build template
 
 on:
   push:
-    branches: [main]
-    paths:
-      - 'cv/**.tex'
+    branches:
+      - master
+  pull_request:
+  registry_package:
 
 jobs:
-  build:
+  build-template:
+    name: Build template
     runs-on: ubuntu-latest
+    container:
+      image: thomasweise/docker-texlive-full:latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Install LaTeX (minimal TeX Live)
-      run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra
+      - name: Build pdf
+        run: latexmk -pdflua ./template.tex
 
-    - name: Compile CV
-      working-directory: ./cv
-      run: |
-        pdflatex -interaction=nonstopmode cv.tex
-        cp cv.pdf ../static/cv.pdf
+      - name: Upload pdf
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv.pdf
+          path: ./static/cv.pdf
 
-    - name: Commit built CV
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "actions@github.com"
-        git add static/cv.pdf
-        git commit -m "Auto-update cv.pdf" || echo "No changes to commit"
-        git push
+      - name: Upload log
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: template.log
+          path: ./template.log
