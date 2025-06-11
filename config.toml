@@ -31,21 +31,15 @@ paginate = 5
   ]
 
 [menu]
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 1
 
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 1
-
-  [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
-    weight = 2
-
-  [[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/erlingdevold"
-    weight = 3
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 2
     
 [caches]
   [caches.images]
