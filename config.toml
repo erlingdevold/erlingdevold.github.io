@@ -1,0 +1,48 @@
+baseURL = "https://erlingdevold.github.io/"
+title = "Erling Arvola Devold"
+theme = "PaperMod"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+enableInlineShortcodes = true
+paginate = 5
+
+[params]
+  author = "Erling Devold"
+  description = "Machine Learning Researcher | AI for Ocean Insight"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  showtoc = true
+  tocopen = true
+  hideFooter = false
+
+[params.profileMode]
+  enabled = true
+  title = "Hi, I'm Erling!"
+  subtitle = "Machine Learning Researcher"
+  imageUrl = "banner.png"  # Optional: place banner in `static/banner.png`
+  imageTitle = "Banner"
+  buttons = [
+    { name = "About", url = "/about/" },
+    { name = "Projects", url = "/projects/" },
+    { name = "GitHub", url = "https://github.com/erlingdevold" }
+  ]
+
+[menu]
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 2
+
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/erlingdevold"
+    weight = 3
