@@ -1,0 +1,3 @@
+baseURL = 'https://erlingdevold.github.io/'
+theme = 'PaperMod'
+title = 'Erling Arvola Devold'
