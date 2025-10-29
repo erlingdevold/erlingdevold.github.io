@@ -3,10 +3,9 @@
 \moderncvcolor{blue}
 \usepackage[scale=0.8]{geometry}
 
+% Personal information
 \name{Erling}{Devold}
-\title{MSc Researcher}
-\address{Tromsø, Norway}
-\phone[mobile]{+47\ 97\ 18\ 54\ 55}
+\title{Researcher in Machine Learning and Computer Vision}
 \email{erling.devold@icloud.com}
 \homepage{erlingdevold.github.io}
 \social[linkedin]{erlingdevold}
@@ -14,26 +13,68 @@
 \begin{document}
 \makecvtitle
 
+%---------------------------------------------------------------------
+% Profile
+%---------------------------------------------------------------------
+\section{Profile}
+Researcher focused on self-supervised and multimodal representation learning for visual and acoustic data. My work spans foundational methods for patch-level understanding, multimodal fusion, and domain adaptation applied to marine imaging and environmental monitoring. I am particularly interested in how vision foundation models learn structure and semantics across modalities.
+
+%---------------------------------------------------------------------
+% Education
+%---------------------------------------------------------------------
 \section{Education}
-\cventry{2018--2023}{M.Sc.\ in Computer Science}{UiT, Arctic Univ.\ of Norway}{}{}{
-Specialized in ML. Thesis: \textit{Through Space and Time} (\href{https://hdl.handle.net/10037/29564}{hdl})}
+\cventry{2018--2023}{M.Sc. in Computer Science}{UiT The Arctic University of Norway}{}{}{
+Specialization in machine learning. Thesis: \textit{Through Space and Time} (\href{https://hdl.handle.net/10037/29564}{hdl})
+}
 
+%---------------------------------------------------------------------
+% Experience
+%---------------------------------------------------------------------
 \section{Experience}
-\cventry{2023--Present}{Research, MSc}{SINTEF AS, Tromsø}{}{}{
-Lead DL algorithm on SannTrål, researcher on JellySafe, acoustic pipelines, aquaculture risk analysis.}
-\cventry{2021--2022}{Engineer (TA)}{UiT, Dept.\ Computer Science}{}{}{
-Designed AirBit2, developed teaching modules.}
+\cventry{2023--Present}{Researcher (M.Sc.)}{SINTEF AS, Tromsø}{}{}{
+Leading development of deep learning methods for marine imaging and environmental monitoring. Focus areas include representation learning, multimodal vision, and acoustic data analysis.
+\begin{itemize}
+  \item Work-package lead in FHF project \textit{SannTrål}: real-time trawl catch monitoring with stereo imaging.
+  \item Principal researcher in \textit{JellySafe}: detection and segmentation of barbed-wire jellyfish (\textit{Apolemia}).
+  \item Contributor to EU Horizon \textit{ILIAD}: scalable machine learning for aquaculture risk assessment.
+  \item Collaboration with NASA JPL in \textit{SubZeroSpace} for self-supervised acoustic imaging under ice.
+\end{itemize}}
 
-\section{Projects}
-\cvitem{SannTrål (FHF)}{Realtime trawl catch monitoring. }
-\cvitem{JellySafe (FHF)}{ barbed-wire jellyfish detection and segmentation.}
-\cvitem{SubZeroSpace (RCN/NASA)}{Hydroacoustic pipeline for under-ice ocean worlds.}
+\cventry{2021--2022}{Engineer (Teaching Assistant)}{UiT Department of Computer Science}{}{}{
+Developed AirBit2 microcontroller platform for STEM education; designed teaching modules in Python for sensor programming and data collection.}
 
+%---------------------------------------------------------------------
+% Selected Projects
+%---------------------------------------------------------------------
+\section{Selected Projects}
+\cvitem{SannTrål (FHF)}{Work-package lead developing real-time trawl monitoring using stereo camera systems and foundation model adapters.}
+\cvitem{JellySafe (FHF)}{Researcher on transformer-based segmentation of barbed-wire jellyfish and multimodal CLIP-style modeling.}
+\cvitem{ILIAD (EU Horizon)}{Developing scalable ML pipelines for ocean monitoring using geospatial and environmental data fusion.}
+\cvitem{SubZeroSpace (RCN/NASA)}{Self-supervised acoustic representation learning for under-ice exploration in collaboration with NASA JPL.}
+\cvitem{Aktivitetsplanlegger (BUFDIR)}{Led development of accessible planner app using React and FastAPI for inclusive user interfaces.}
+
+%---------------------------------------------------------------------
+% Publications & Presentations
+%---------------------------------------------------------------------
+\section{Publications and Presentations}
+\cvitem{2023}{\textbf{Through Space and Time}, M.Sc. Thesis, UiT The Arctic University of Norway.}
+\cvitem{2025}{\textbf{EchoFlow} (under review, JOSS): a containerised workflow for Kongsberg EK80 echosounder data.}
+\cvitem{2025}{\textbf{Automated detection of barbed-wire jellyfish (Apolemia sp.) in citizen science imagery}, Aquaculture Europe Conference.}
+
+%---------------------------------------------------------------------
+% Skills
+%---------------------------------------------------------------------
 \section{Skills}
-\cvitem{}{PyTorch, DINOv2, Hydra, Docker, Dask, Numba}
+\cvitem{Machine Learning}{PyTorch, DINOv2, MAE, CLIP, Swin-Transformer, Multiple Instance Learning}
+\cvitem{Engineering}{Hydra, Dask, Docker, DVC, FiftyOne, FastAPI}
+\cvitem{Software}{Python, TypeScript, React, Git, Linux}
 
+%---------------------------------------------------------------------
+% Languages
+%---------------------------------------------------------------------
 \section{Languages}
 \cvitem{Norwegian}{Native}
 \cvitem{English}{Fluent}
 
 \end{document}
+
