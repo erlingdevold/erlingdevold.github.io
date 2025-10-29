@@ -7,48 +7,48 @@ enableInlineShortcodes = true
 
 pagination.pagerSize = 10
 [params]
-  author = "Erling Devold"
-  description = "Machine Learning Researcher"
-  ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  showtoc = true
-  tocopen = true
-  hideFooter = true
+mainSections = ["posts"]
+author = "Erling Devold"
+description = "Machine Learning Researcher"
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+showtoc = true
+tocopen = true
+hideFooter = true
 
-  socialIcons = [
-    { name = "LinkedIn", url = "https://linkedin.com/in/erlingdevold" },
-    # { name = "Google Scholar", url = "https://scholar.google.com/citations?user=8nB9n9sAAAAJ" },
-    { name = "Email", url = "mailto:erling.devold@icloud.com" },
-    { name = "GitHub", url = "https://github.com/erlingdevold" }
-  ]
+socialIcons = [
+  { name = "LinkedIn", url = "https://linkedin.com/in/erlingdevold" },
+  # { name = "Google Scholar", url = "https://scholar.google.com/citations?user=8nB9n9sAAAAJ" },
+  { name = "Email", url = "mailto:erling.devold@icloud.com" },
+  { name = "GitHub", url = "https://github.com/erlingdevold" },
+]
 
 [params.profileMode]
-  enabled = true
-  imageUrl = "https://avatars.githubusercontent.com/u/54443138"
-  imageTitle = "Profile picture"
-  imageWidth = 200
-  imageHeight = 200
-  title = "Erling Devold"
-  subtitle = "Machine Learning Researcher"
-  buttons = [
-    { name = "Blog", url = "/posts/" },
-    { name = "CV", url = "/cv.pdf" }
-  ]
+enabled = true
+imageUrl = "https://avatars.githubusercontent.com/u/54443138"
+imageTitle = "Profile picture"
+imageWidth = 200
+imageHeight = 200
+title = "Erling Devold"
+subtitle = "Machine Learning Researcher"
+buttons = [{ name = "Blog", url = "/posts/" }, { name = "CV", url = "/cv.pdf" }]
 [menu]
-  [[menu.main]]
-    name = "Erling"
-    url = "/about/"
-    weight = 1
+[[menu.main]]
+name = "Erling"
+url = "/about/"
+weight = 1
 
-  [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
-    weight = 2
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 3
+[[menu.main]]
+name = "Projects"
+url = "/projects/"
+weight = 2
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 3
 
+[build]
+buildFuture = true
